@@ -1,0 +1,112 @@
+.profile-header {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1024px;
+    margin-bottom: 148px;
+}
+
+.cover-photo {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile-info {
+    background-color: rgba(37, 42, 56, 0.56);
+    position: absolute;
+    height: 200px;
+    width: calc( min(100%, 1024px) - 200px );
+    left: 200px;
+    top: calc(30vh - 100px);
+}
+
+.profile-info img {
+    position: absolute;
+    left: -100px;
+    border-radius: 50%;
+    border: 3px solid white;
+    width: calc(200px - (2 * 3px));
+}
+
+.profile-info-text {
+    position: absolute;
+    left: 148px;
+}
+
+.profile-info-text h1 {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.profile-info-text .email {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 20px;
+    color: #dcdcdc;
+}
+
+.user-post-list ol {
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 1024px;
+    padding: 0 3rem;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.user-post-list .post {
+    width: calc((100% - 3rem) / 2);
+    min-width: 200px;
+    list-style-type: none;
+    position: relative;
+    background-color: #151820;
+    margin-right: 2rem;
+    margin-bottom: 0;
+}
+
+/* Remove the gutter from the last post */
+.user-post-list .post:last-child {
+    margin-right: 0;
+}
+
+@media (min-width: 800px) {
+    .user-post-list ol {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1024px;
+        padding: 0 3rem;
+        margin: 0 auto;
+    }
+
+    .user-post-list .post {
+        width: calc((100% - (2 * 3rem)) / 3);
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
+}
+
+.user-post-list .post img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 200px;
+}
+
+.user-post-list .post .text-container {
+    padding: 1.5rem;
+}
+
+.user-post-list .post .text-container h3, p {
+    margin: 0;
+}
+
+.user-post-list .post .date {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 20px;
+    color: #dcdcdc;
+}

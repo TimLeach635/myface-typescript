@@ -2,7 +2,81 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-<h1><%= name %></h1>
+    <div class="profile-header">
+        <img
+            src="<%= coverImageUrl %>"
+            alt="<%= name %>'s cover photo"
+            class="cover-photo"
+        />
+        <div class="profile-info">
+            <img
+                src="<%= profileImageUrl %>"
+                alt="<%= name %>'s profile picture"
+            />
+            <div class="profile-info-text">
+                <h1><%= name %></h1>
+                <p class="username"><%= username %></p>
+                <p class="email"><%= email %></p>
+            </div>
+        </div>
+    </div>
+
+    <section class="user-post-list">
+        <h2><%= name %>'s posts</h2>
+        <ol>
+            <% posts.forEach((post) => { %>
+                <li class="post">
+                    <img
+                        src="<%= post.imageUrl %>"
+                        alt="<%= post.message %>"
+                    />
+                    <div class="text-container">
+                        <h3><%= username %></h3>
+                        <p class="date"><%= post.createdAt %></p>
+                        <p class="message"><%= post.message %></p>
+                    </div>
+                </li>
+            <% }); %>
+        </ol>
+    </section>
+
+    <section class="user-post-list">
+        <h2><%= name %>'s likes</h2>
+        <ol>
+            <% likes.forEach((post) => { %>
+                <li class="post">
+                    <img
+                        src="<%= post.imageUrl %>"
+                        alt="<%= post.message %>"
+                    />
+                    <div class="text-container">
+                        <h3><%= username %></h3>
+                        <p class="date"><%= post.createdAt %></p>
+                        <p class="message"><%= post.message %></p>
+                    </div>
+                </li>
+            <% }); %>
+        </ol>
+    </section>
+
+    <section class="user-post-list">
+        <h2><%= name %>'s dislikes</h2>
+        <ol>
+            <% dislikes.forEach((post) => { %>
+                <li class="post">
+                    <img
+                        src="<%= post.imageUrl %>"
+                        alt="<%= post.message %>"
+                    />
+                    <div class="text-container">
+                        <h3><%= username %></h3>
+                        <p class="date"><%= post.createdAt %></p>
+                        <p class="message"><%= post.message %></p>
+                    </div>
+                </li>
+            <% }); %>
+        </ol>
+    </section>
 </body>
 <%- include('_footer') -%>
 </html>

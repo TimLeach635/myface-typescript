@@ -6,7 +6,19 @@
 <ol>
     <% results.forEach(function(post) {%>
         <li>
-            <%= post.message %>
+            <h2><%= post.message %></h2>
+            <img src="<%= post.imageUrl %>" alt="Image of <%= post.message %>" width="200" />
+            <p>Post by <%= post.postedBy.name %> (<%= post.postedBy.username %>) at <%= post.createdAt %></p>
+            <% if(post.likedBy.length > 0) { %>
+                <p>
+                    <%= post.likedBy.length %> likes:
+                    <ul>
+                        <% post.likedBy.forEach(function(user) {%>
+                            <li><%= user.name %></li>
+                        <% }); %>
+                    </ul>
+                </p>
+            <% } %>
         </li>
     <% }); %>
 </ol>
