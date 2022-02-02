@@ -1,1 +1,129 @@
-/* Add your styles here. */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #252a38;
+    color: #DCDCDC;
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+}
+
+nav {
+    display: none;
+    background-color: #151820;
+    box-sizing: border-box;
+    padding: 1rem 0;
+}
+
+nav a {
+    color: white;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: white;
+    background-color: #777777;
+}
+
+nav a:visited {
+    color: white;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+/* User stuff */
+
+.user-info {
+    background-color: #252a388f;
+}
+
+.user-info p, .user-info h1 {
+    margin: 0;
+}
+
+.user-header .user-profile-pic {
+    width: 7rem;
+    height: 7rem;
+    border: 0.25rem solid white;
+    border-radius: 3.5rem;
+    box-sizing: border-box;
+    position: absolute;
+    top: calc(30vh - 3.5rem);
+    left: 1.5rem;
+    z-index: 102;
+}
+
+.user-header .user-cover-photo {
+    width: 100vw;
+    height: 30vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.user-header .user-info {
+    height: 7rem;
+    width: calc(100vw - (1.5rem + 3.5rem));
+    padding-left: calc(3.5rem + 1rem);
+    position: absolute;
+    top: calc(30vh - 3.5rem);
+    left: calc(1.5rem + 3.5rem);
+    z-index: 101;
+}
+
+.user-info .user-username {
+    font-weight: 600;
+}
+
+.user-info .user-email {
+    font-weight: 300;
+}
+
+.first-after-user-header {
+    margin-top: calc(30vh + 3.5rem + 2.5rem);
+}
+
+/* Post stuff */
+
+.post-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.post {
+    background-color: #151820;
+    padding: 1em;
+    margin-bottom: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    .post {
+        width: calc((100% - 1em) / 2);
+    }
+}
+
+@media (min-width: 900px) {
+    .post {
+        width: calc((100% - 3em) / 4);
+    }
+
+    .post:first-child {
+        width: calc((100% - 1em) / 2);
+    }
+}
+
+.post .post-posted-by {
+    font-style: italic;
+    color: #cccccc;
+}

@@ -3,13 +3,21 @@
 <%- include('_header') -%>
 <body>
 <h1>Posts</h1>
-<ol>
+<ol class="post-list">
     <% results.forEach(function(post) {%>
-        <li>
-            <%= post.message %>
+        <li class="post">
+            <img class="post-image" src="<%= post.imageUrl %>" alt="<%= post.message %>" width="50" height="50" />
+            <p class="post-message"><%= post.message %></p>
+            <p class="post-posted-by">Posted by <a href="/users/<%= post.postedBy.id %>"><%= post.postedBy.name %></a></p>
         </li>
     <% }); %>
 </ol>
+<%if (next) { %>
+    <a href="<%= next %>">Next</a>
+<% } %>
+<%if (previous) { %>
+    <a href="<%= previous %>">Previous</a>
+<% } %>
 </body>
 <%- include('_footer') -%>
 </html>
